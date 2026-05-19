@@ -1,0 +1,30 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS-specific files
+.DS_Store
+.DS_Store?
+._*
+
+# VS Code / IDE settings
+.vscode/
+.idea/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# ML Models (Ignore serialized binaries to keep repository clean)
+models/*.pkl
+models/*.joblib
+
+# Generated Datasets
+data/oxford_prosody_dataset.csv
+data/oxford_prosody_dataset_clean.csv
+data/oxford_vocabulary.csv
