@@ -241,62 +241,99 @@ This produces a softer, more realistic probability distribution suitable for vis
 
 ## Getting Started
 
-### Prerequisites
+### Method 1: Using Docker (Recommended - No Python/venv needed locally)
 
+Ensure you have **Docker** installed and running on your system.
+
+#### 1. Run Automated Docker Setup
+You can build the Docker image, run the entire data preparation/training pipeline inside containerized volumes, and start the FastAPI service with a single command:
+```bash
+chmod +x setup_docker.sh
+./setup_docker.sh
+```
+
+This script will:
+- Build the `cefr-prosody-api` Docker image.
+- Run steps 1 to 4 inside temporary containers, outputting the trained `.pkl` models and `.csv` datasets back into your local `./models/` and `./data/` folders (via host volume mounting).
+- Start the API microservice on container port `8000`.
+
+#### 2. Test the API Endpoints
+Once running, you can interact with the microservice:
+- **Check Status (GET)**:
+  ```bash
+  curl http://localhost:8000/
+  ```
+- **Analyze Speech Features (POST)**:
+  ```bash
+  curl -X POST http://localhost:8000/analyze \
+    -H "Content-Type: application/json" \
+    -d '{
+      "pitch_mean": 175.2,
+      "pitch_std": 25.1,
+      "pitch_contour_slope": 0.48,
+      "energy_rms": 0.12,
+      "duration_seconds": 2.4,
+      "speech_rate": 2.8,
+      "response_time_ms": 1100.0,
+      "lexical_diversity": 0.72,
+      "grammar_error_rate": 0.08,
+      "pronunciation_accuracy": 82.5,
+      "pause_ratio": 0.21,
+      "filler_words_rate": 0.05,
+      "wpm_consistency": 78.0,
+      "asr_confidence": 0.88,
+      "semantic_relevance": 81.0,
+      "whisper_feat_1": 4.2,
+      "whisper_feat_2": 1.8,
+      "whisper_feat_3": 2.1,
+      "user_prior_score": 74.0
+    }'
+  ```
+
+---
+
+### Method 2: Local Python & Virtual Environment (venv)
+
+#### Prerequisites
 - Python 3.10 or higher
 - Bash environment (macOS/Linux)
 
-### Automated Setup
-
-You can set up the environment, install dependencies, parse the vocabulary, generate synthetic speech data, clean the datasets, and train all models with a single command:
-
+#### 1. Automated Local Setup
+Run the setup script to prepare the venv, install packages, and train models locally:
 ```bash
 chmod +x setup.sh
 ./setup.sh
 ```
 
-### Manual Setup Steps
-
+#### 2. Manual Setup Steps
 If you prefer to run steps manually:
-
 1. **Create and Activate Virtual Environment**:
    ```bash
    python3 -m venv venv
    source venv/bin/activate
    ```
-
 2. **Install Dependencies**:
    ```bash
+   pip install --upgrade pip
    pip install -r requirements.txt
    ```
-
-3. **Step 1: Parse Oxford PDFs**:
+3. **Run Pipeline Steps**:
    ```bash
    python AI/parse_oxford_pdf.py
-   ```
-
-4. **Step 2: Generate Simulated Dataset**:
-   ```bash
    python AI/generate_dataset.py
-   ```
-
-5. **Step 3: Clean Dataset**:
-   ```bash
    python AI/clean_data.py
-   ```
-
-6. **Step 4: Train and Save Models**:
-   ```bash
    python AI/train.py
    ```
 
+---
+
 ### Running the Notebooks
 
-After the data pipeline is complete, open the notebooks:
+To run the local Jupyter notebooks (`Presentation_Model.ipynb` or `Stacking_Ensemble_Model.ipynb`) for EDA or ensemble training:
 
 ```bash
-jupyter notebook Presentation_Model.ipynb
+source venv/bin/activate
 jupyter notebook Stacking_Ensemble_Model.ipynb
 ```
 
-Or upload them to [Kaggle](https://www.kaggle.com/) — adjust the dataset path in cell #2 to point to your Kaggle dataset location.
+Or upload them to [Kaggle](https://www.kaggle.com/) and adjust the paths to point to your Kaggle dataset location.

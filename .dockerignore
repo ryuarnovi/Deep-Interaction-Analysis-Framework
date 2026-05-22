@@ -1,0 +1,31 @@
+# Exclude virtual environment
+venv/
+.venv/
+env/
+
+# Exclude git metadata
+.git/
+.gitignore
+
+# Exclude python cache
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+
+# Exclude Jupyter notebooks checkpoints and temp files
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+.ipynb/
+
+# Exclude OS generated files
+.DS_Store
+Thumbs.db
+
+# Exclude IDE settings
+.vscode/
+.idea/
+
+# Exclude raw input PDFs or generated output models (optional, uncomment if you want to train inside Docker instead of bundling)
+# data/
+# models/*.pkl
