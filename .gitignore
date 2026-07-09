@@ -50,7 +50,11 @@ CEFR Speech Coach Results.zip
 # Generated datasets and audio corpora (Very Large Directories)
 **/data/
 
+# Academic paper write-ups
+makalah/
+
 # Temporary files from Word or office tools
 ~$*.docx
 ~$*.xlsx
 ~$*.pptx
+

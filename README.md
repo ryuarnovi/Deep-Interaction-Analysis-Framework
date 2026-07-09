@@ -50,12 +50,6 @@ Jika Anda menginisialisasi Git pada direktori utama (cefr-speech-coach), struktu
 cefr-speech-coach/
 ├── .gitignore                         # Mengabaikan venv, bobot model besar, dan dataset generatif
 ├── README.md                          # Dokumentasi utama proyek (file ini)
-├── makalah/                           # Dokumen akademis dan naskah publikasi ilmiah
-│   ├── Makalah_CEFR_Speech_Coach.md   # Naskah makalah dalam format Markdown
-│   ├── Makalah_CEFR_Speech_Coach.pdf   # Hasil ekspor dokumen ilmiah ke PDF
-│   ├── Makalah_CEFR_Speech_Coach.docx  # Dokumen makalah dalam format Word
-│   ├── convert_makalah.py             # Script utilitas untuk konversi format makalah
-│   └── images/                        # Aset gambar pendukung makalah
 ├── modeling/                          # Pipeline kode Machine Learning dan Notebook eksperimen
 │   ├── requirements.txt               # Daftar pustaka Python (dependencies)
 │   ├── setup.sh                       # Script automasi setup environment & training pipeline
@@ -81,10 +75,9 @@ cefr-speech-coach/
 
 ## Panduan Push ke Repository Git
 
-Untuk menjaga repositori tetap bersih, ringan, dan cepat saat proses git push atau git clone, Anda hanya perlu mengunggah kode sumber, visualisasi, dan dokumen makalah. File berukuran besar atau bersifat dinamis harus diabaikan melalui file .gitignore.
+Untuk menjaga repositori tetap bersih, ringan, dan cepat saat proses git push atau git clone, Anda hanya perlu mengunggah kode sumber dan visualisasi hasil. File berukuran besar atau bersifat dinamis harus diabaikan melalui file .gitignore.
 
 ### File yang Wajib di-Push (Diunggah ke Repo):
-* Makalah & Gambar: Seluruh folder makalah/ (berisi PDF, Docx, MD, dan gambar-gambarnya).
 * Kode Sumber: Seluruh script Python di dalam modeling/AI/, modeling/kaggle_training.py, dan modeling/CEFR Speech Coach.ipynb.
 * Dokumentasi & Konfigurasi: README.md, modeling/requirements.txt, modeling/setup.sh, dan .gitignore.
 * Dataset Referensi Statis: File PDF kosakata Oxford di modeling/models/.
@@ -163,7 +156,7 @@ Jika Anda ingin menjalankan setiap tahapan pipeline secara terpisah:
 
 ## Hasil Evaluasi Utama
 
-Berdasarkan eksperimen dan naskah ilmiah yang dilampirkan pada folder makalah/, berikut adalah performa model yang berhasil dicapai:
+Berdasarkan hasil eksperimen pemodelan, berikut adalah performa model yang berhasil dicapai:
 
 ### 1. Klasifikasi Tingkat CEFR (Machine Learning Tradisional)
 Evaluasi diuji menggunakan teknik Speaker-Independent Split (GroupShuffleSplit berdasarkan speaker_id) untuk mencegah kebocoran informasi (data leakage) karakteristik suara pembicara.
