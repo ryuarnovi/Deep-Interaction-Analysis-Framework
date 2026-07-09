@@ -1,30 +1,60 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
-
-# OS-specific files
-.DS_Store
-.DS_Store?
-._*
-
-# VS Code / IDE settings
-.vscode/
-.idea/
-
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints/
-
 # Virtual Environment
 venv/
 .venv/
 env/
+bin/
+lib/
+share/
+include/
 
-# ML Models (Ignore serialized binaries to keep repository clean)
-models/*.pkl
-models/*.joblib
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
 
-# Generated Datasets
-data/oxford_prosody_dataset.csv
-data/oxford_prosody_dataset_clean.csv
-data/oxford_vocabulary.csv
+# OS Metadata
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+
+# VS Code / IDE settings
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# ML Model Weight / Binary Files (Large Files)
+**/models/*.pkl
+**/models/*.joblib
+**/models/*.h5
+**/models/*.pb
+**/models/*.onnx
+
+# Large wav2vec2 model directories and weights (Hugging Face model artifacts)
+results/wav2vec2-cefr/
+results/cefr-wav2vec2-final/
+**/results/models/
+**/checkpoint-*/
+
+# Large ZIP Files
+*.zip
+CEFR Speech Coach Results.zip
+
+# Generated datasets and audio corpora (Very Large Directories)
+**/data/
+
+# Academic paper write-ups
+makalah/
+
+# Temporary files from Word or office tools
+~$*.docx
+~$*.xlsx
+~$*.pptx
+

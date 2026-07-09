@@ -21,7 +21,25 @@ def generate_prosody_dataset(vocab_csv='data/oxford_vocabulary.csv', output_csv=
     vocab_df = pd.concat([vocab_df, c2_df], ignore_index=True)
 
     cefr_levels = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']
-    scenarios = ['interview', 'emergency', 'casual_chat', 'presentation', 'academic_discussion']
+    # 8 Kategori Percakapan — 35 skenario berdasarkan Taksonomi Komunikasi Bahasa Inggris
+    scenarios = [
+        # 1. Daily Life
+        'greeting_intro', 'shopping', 'ordering_food', 'asking_directions', 'small_talk',
+        # 2. Workplace & Business
+        'meeting_presentation', 'job_interview', 'negotiation', 'business_call', 'giving_feedback',
+        # 3. Academic
+        'class_discussion', 'assignment_presentation', 'academic_consultation', 'group_project', 'oral_exam',
+        # 4. Social & Leisure
+        'inviting', 'travel_story', 'team_sports', 'party_chat', 'giving_advice',
+        # 5. Public Services
+        'airport', 'hotel', 'bank', 'post_office', 'pharmacy_clinic',
+        # 6. Emergency & Health
+        'emergency_call', 'reporting_theft', 'doctor_consultation', 'first_aid',
+        # 7. Phone & Virtual
+        'voicemail', 'appointment_scheduling', 'video_conference', 'customer_service',
+        # 8. Cross-cultural
+        'local_customs', 'clarifying_misunderstanding', 'cultural_etiquette'
+    ]
     
     # Generate 150 different speakers to simulate a multi-speaker environment
     speakers = [f"SPK_{i:03d}" for i in range(1, 151)]
