@@ -54,8 +54,8 @@ def clean_dataset(input_path='data/oxford_prosody_dataset.csv', output_path='dat
 
     # 5. Normalisasi String / Teks
     df['word'] = df['word'].astype(str).str.strip().str.lower()
-    # Hanya simpan kata yang valid secara alfabetik
-    df = df[df['word'].str.match(r'^[a-z\-]+$')]
+    # Hanya simpan kata yang valid secara alfabetik (termasuk karakter underscore dan angka untuk kata sintetis C2)
+    df = df[df['word'].str.match(r'^[a-z\-0-9_]+$')]
     print(f"Setelah normalisasi teks kosakata: {len(df)} baris")
 
     # 6. Menyimpan Dataset Hasil Pembersihan

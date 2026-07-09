@@ -1,0 +1,1 @@
+{"repos": [{"repoId": "facebook/wav2vec2-base", "repoType": "model", "commitHash": "f30924bbbfbf6058e04aab549531ea55c74928d0", "filePaths": ["model.safetensors"]}, {"repoId": "facebook/wav2vec2-base", "repoType": "model", "commitHash": "0b5b8e868dd84f03fd87d01f9c4ff0f080fecfe8", "filePaths": ["config.json", "preprocessor_config.json", "pytorch_model.bin"]}]}
