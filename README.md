@@ -79,26 +79,7 @@ cefr-speech-coach/
     └── partB_results.png              # Grafik performa fine-tuning Wav2Vec2 + LoRA
 ```
 
----
 
-## Panduan Push ke Repository Git
-
-Untuk menjaga repositori tetap bersih, ringan, dan cepat saat proses git push atau git clone, Anda hanya perlu mengunggah kode sumber dan visualisasi hasil. File berukuran besar atau bersifat dinamis harus diabaikan melalui file .gitignore.
-
-### File yang Wajib di-Push (Diunggah ke Repo):
-* Kode Sumber: Seluruh script Python di dalam modeling/AI/, modeling/kaggle_training.py, dan notebook eksperimen.
-* Dokumentasi & Konfigurasi: README.md, Dockerfile, requirements.txt, setup.sh, setup_docker.sh, dan .gitignore.
-* Dataset Referensi Statis: File PDF kosakata Oxford di modeling/models/.
-* Visualisasi Hasil: File gambar grafik .png di dalam folder results/.
-
-### File yang Harus Diabaikan dalam .gitignore (Dilarang di-Push):
-* Virtual Environment (venv/, .venv/): Berisi instalasi dependensi lokal (~500 MB+).
-* File Serialisasi Model (models/*.pkl, models/*.joblib): Bobot biner model terlatih. File ini besar dan bisa digenerasi ulang lewat training.
-* Hasil Latih Deep Learning (results/wav2vec2-cefr/, results/cefr-wav2vec2-final/): Folder checkpoint Wav2Vec2 hasil training berukuran ratusan MB hingga GB.
-* Dataset Dinamis (modeling/data/*.csv): Dataset CSV hasil simulasi yang dibuat otomatis oleh script.
-* File ZIP Backup (CEFR Speech Coach Results.zip): Berukuran 312 MB (melebihi batas file GitHub sebesar 100 MB).
-
----
 
 ## Langkah Memulai (Getting Started)
 
