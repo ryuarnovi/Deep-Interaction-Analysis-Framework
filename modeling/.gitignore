@@ -24,7 +24,7 @@ env/
 models/*.pkl
 models/*.joblib
 
-# Generated Datasets
+# Generated Datasets (keep clean dataset for Streamlit dashboard)
 data/oxford_prosody_dataset.csv
-data/oxford_prosody_dataset_clean.csv
+# data/oxford_prosody_dataset_clean.csv  # INCLUDED for Streamlit deploy
 data/oxford_vocabulary.csv
