@@ -4,6 +4,8 @@ Sistem kecerdasan buatan berbasis Machine Learning dan Deep Learning untuk menil
 
 Proyek ini menggabungkan ekstraksi fitur akustik (prosodi), fitur linguistik (fluency/pelafalan), serta representasi suara tingkat tinggi menggunakan model state-of-the-art speech-to-text.
 
+**Demo Aplikasi Web (Streamlit):** [https://cefr-speech-coach.streamlit.app/](https://cefr-speech-coach.streamlit.app/)
+
 ---
 
 ## Ringkasan Proyek
